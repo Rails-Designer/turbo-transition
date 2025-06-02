@@ -1,0 +1,23 @@
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+  background: gray;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.demo-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+}
+
+.demo-box {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: gray;
+  text-align: center;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turbo Transition Test</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./transitions.css">
+</head>
+<body>
+  <div class="container">
+    <div class="demo-section">
+      <p>Fade In</p>
+      <turbo-transition
+        enter-from-class="fade-enter-from"
+        enter-active-class="fade-enter-active"
+        enter-to-class="fade-enter-to"
+      >
+        <div class="demo-box">Fade in on page load</div>
+      </turbo-transition>
+
+      <p>Slide In</p>
+      <turbo-transition
+        enter-from-class="slide-enter-from"
+        enter-active-class="slide-enter-active"
+        enter-to-class="slide-enter-to"
+      >
+        <div class="demo-box">Slide in on page load</div>
+      </turbo-transition>
+
+      <p>Spinner Enter</p>
+      <turbo-transition
+        enter-from-class="spinner-enter-from"
+        enter-active-class="spinner-enter-active"
+        enter-to-class="spinner-enter-to"
+      >
+        <div class="demo-box">Spinner enter animation</div>
+      </turbo-transition>
+    </div>
+
+    <div class="demo-section">
+      <p>Fade Out</p>
+      <button onclick="removeById('fade-leave-demo')">Remove</button>
+
+      <turbo-transition
+        id="fade-leave-demo"
+        leave-from-class="fade-leave-from"
+        leave-active-class="fade-leave-active"
+        leave-to-class="fade-leave-to"
+      >
+        <div class="demo-box">Fade out</div>
+      </turbo-transition>
+
+      <p>Scale Out</p>
+      <button onclick="removeById('scale-leave-demo')">Remove</button>
+
+      <turbo-transition
+        id="scale-leave-demo"
+        leave-from-class="scale-leave-from"
+        leave-active-class="scale-leave-active"
+        leave-to-class="scale-leave-to"
+      >
+        <div class="demo-box">Scale out</div>
+      </turbo-transition>
+
+      <p>Spinner Leave</p>
+      <button onclick="removeById('spinner-leave-demo')">Remove</button>
+
+      <turbo-transition
+        id="spinner-leave-demo"
+        leave-from-class="spinner-leave-from"
+        leave-active-class="spinner-leave-active"
+        leave-to-class="spinner-leave-to"
+      >
+        <div class="demo-box">Spinner leave</div>
+      </turbo-transition>
+    </div>
+  </div>
+
+  <script src="../dist/turbo-transition.umd.js"></script>
+
+  <script>
+    function removeById(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.remove();
+      }
+    }
+  </script>
+</body>
+</html>

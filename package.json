@@ -1,0 +1,42 @@
+{
+  "name": "turbo-transition",
+  "version": "0.1.0",
+  "description": "A “minion” for Turbo-Frames and Streams. This custom element transitions elements as they enter or leave the DOM.",
+  "type": "module",
+  "main": "dist/turbo-transition.umd.js",
+  "module": "dist/turbo-transition.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/turbo-transition.esm.js",
+      "require": "./dist/turbo-transition.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "npm run build && open test/index.html",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "hotwire",
+    "turbo",
+    "turbo-streams",
+    "rails",
+    "turbo-transition"
+  ],
+  "author": "Rails Designer",
+  "homepage": "https://railsdesigner.com/turbo-transition/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rails-Designer/turbo-transition.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rails-Designer/turbo-transition/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^3.0.0"
+  }
+}
