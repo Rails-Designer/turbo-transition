@@ -2,6 +2,8 @@
 
 A “minion” for Turbo-Frames and Streams. This custom element transitions elements as they enter or leave the DOM.
 
+![Shows a fade out and slide up transition of one message after clicking a trash can icon]()https://raw.githubusercontent.com/Rails-Designer/turbo-transition/HEAD/.github/turbo-transition-example.gif)
+
 **Sponsored By [Rails Designer](https://railsdesigner.com/)**
 
 <a href="https://railsdesigner.com/" target="_blank">
