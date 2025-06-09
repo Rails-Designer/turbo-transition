@@ -63,6 +63,7 @@ The element watches for two lifecycle events:
 ### Leave
 
 ```erb
+<%# app/views/tasks/_task.html.erb %>
 <turbo-transition
   id="<%= dom_id(task) %>"
   leave-from-class="fade-leave-from"
