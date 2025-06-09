@@ -18,7 +18,17 @@ Want to be able to understand this JavaScript code? 😊 👉 [JavaScript for Ra
 ## Installation
 
 ```bash
+# Using importmap
+bin/importmap pin turbo-transition
+
+# Using npm
 npm install turbo-transition
+```
+
+Then add to your JavaScript entrypoint (`app/javascript/application.js`):
+
+```javascript
+import "turbo-transition"
 ```
 
 
