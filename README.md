@@ -2,7 +2,6 @@
 
 A “minion” for Turbo-Frames and Streams. This custom element transitions elements as they enter or leave the DOM.
 
-
 **Sponsored By [Rails Designer](https://railsdesigner.com/)**
 
 <a href="https://railsdesigner.com/" target="_blank">
@@ -19,14 +18,23 @@ Want to be able to understand this JavaScript code? 😊 👉 [JavaScript for Ra
 ## Installation
 
 ```bash
+# Using importmap
+bin/importmap pin turbo-transition
+
+# Using npm
 npm install turbo-transition
+```
+
+Then add to your JavaScript entrypoint (`app/javascript/application.js`):
+
+```javascript
+import "turbo-transition"
 ```
 
 
 ## Usage
 
-Turbo Transition works by wrapping your elements and applying CSS classes at the right moments.
-Use it to transition new items sliding into lists, fade out deleted content, or any other transition effect with CSS.
+Turbo Transition works by wrapping your elements in a `<turbo-transition>` element and applying CSS classes at the right moments. Use it to transition new items sliding into lists, fade out deleted content, or any other transition effect with CSS. Each `<turbo-transition>` element must contain exactly one child element.
 
 The element watches for two lifecycle events:
 
@@ -36,7 +44,6 @@ The element watches for two lifecycle events:
 
 ### Enter
 
-Use when adding new records:
 ```erb
 <%# app/views/tasks/create.turbo_stream.erb %>
 <%= turbo_stream.append "tasks" do %>
@@ -53,9 +60,7 @@ Use when adding new records:
 
 ### Leave
 
-Wrap existing elements that can be removed:
 ```erb
-<%# app/views/tasks/_task.html.erb %>
 <turbo-transition
   id="<%= dom_id(task) %>"
   leave-from-class="fade-leave-from"
@@ -68,8 +73,6 @@ Wrap existing elements that can be removed:
   </div>
 </turbo-transition>
 ```
-
-The element will transition out before being removed from the DOM.
 
 
 ### Example CSS
@@ -87,9 +90,6 @@ The element will transition out before being removed from the DOM.
 # Install dev dependencies
 npm install
 
-# Build bundles (ESM + UMD)
-npm run build
-
 # Run basic test
 npm test
 
@@ -102,4 +102,5 @@ git push --tags
 
 
 ## License
+
 Turbo Transition is released under the MIT License.
