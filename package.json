@@ -1,6 +1,6 @@
 {
   "name": "turbo-transition",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A “minion” for Turbo-Frames and Streams. This custom element transitions elements as they enter or leave the DOM.",
   "type": "module",
   "main": "dist/turbo-transition.umd.js",
