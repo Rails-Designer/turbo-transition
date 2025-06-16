@@ -86,6 +86,34 @@ The element watches for two lifecycle events:
 .fade-enter-to, .fade-leave-from { opacity: 1; }
 ```
 
+For more transition examples, see [`examples/transitions.css`](examples/transitions.css). You can customize any transition using CSS properties:
+```html
+<turbo-transition
+  class="modal"
+  enter-from-class="fade-move-enter-from"
+  enter-active-class="fade-move-enter-active"
+  enter-to-class="fade-move-enter-to"
+>
+  <div class="content">
+    <!-- Modal content -->
+  </div>
+</turbo-transition>
+```
+
+```css
+.modal {
+  --transition-enter-y: -20px;
+  --transition-duration: 400ms;
+}
+
+@media (width > 640px) {
+  .modal {
+    --transition-enter-y: 100%;
+    --transition-enter-x: 0;
+  }
+}
+```
+
 
 ## Contributing
 
