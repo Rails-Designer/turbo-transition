@@ -3,9 +3,9 @@
   transition: opacity var(--transition-duration, 300ms) var(--transition-easing, ease-out);
 }
 
-.fade-enter-from, .fade-leave-to {
-  opacity: var(--transition-opacity, 0);
-}
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+.fade-enter-to, .fade-leave-from { opacity: 1; }
 
 
 /* Fade move */
@@ -14,19 +14,27 @@
 }
 
 .fade-move-enter-from {
-  opacity: var(--transition-opacity, 0);
-  transform:
+  opacity: 0;
+  transform: 
     translateX(var(--transition-enter-x, 0px))
     translateY(var(--transition-enter-y, 10px))
     scale(var(--transition-enter-scale, 1));
 }
 
 .fade-move-leave-to {
-  opacity: var(--transition-opacity, 0);
-  transform:
+  opacity: 0;
+  transform: 
     translateX(var(--transition-leave-x, 0px))
     translateY(var(--transition-leave-y, -10px))
     scale(var(--transition-leave-scale, 1));
+}
+
+.fade-move-enter-to, .fade-move-leave-from {
+  opacity: 1;
+  transform: 
+    translateX(0)
+    translateY(0)
+    scale(1);
 }
 
 
@@ -36,26 +44,30 @@
 }
 
 .scale-enter-from, .scale-leave-to {
-  opacity: var(--transition-opacity, 0);
-  transform: scale(var(--transition-scale, 0.95));
+  opacity: 0;
+  transform: scale(var(--transition-scale, .95));
+}
+
+.scale-enter-to, .scale-leave-from {
+  opacity: 1;
+  transform: scale(1);
 }
 
 
-/* Slide */
-.slide-enter-active, .slide-leave-active {
-  transition: all var(--transition-duration, 300ms) var(--transition-easing, ease-out);
+/* Collapse */
+.collapse-enter-active, .collapse-leave-active {
+  transition: 
+    opacity var(--transition-duration, 200ms) var(--transition-easing, ease-out),
+    max-height var(--transition-duration, 200ms) var(--transition-easing, ease-out);
+  overflow: hidden;
 }
 
-.slide-enter-from {
-  opacity: var(--transition-opacity, 0);
-  transform:
-    translateX(var(--transition-enter-x, -10px))
-    translateY(var(--transition-enter-y, 0px));
+.collapse-enter-from, .collapse-leave-to {
+  opacity: 0;
+  max-height: 0;
 }
 
-.slide-leave-to {
-  opacity: var(--transition-opacity, 0);
-  transform:
-    translateX(var(--transition-leave-x, 10px))
-    translateY(var(--transition-leave-y, 0px));
+.collapse-enter-to, .collapse-leave-from {
+  opacity: 1;
+  max-height: var(--transition-max-height, 100vh);
 }
