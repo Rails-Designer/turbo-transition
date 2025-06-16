@@ -59,17 +59,3 @@
     translateX(var(--transition-leave-x, 10px))
     translateY(var(--transition-leave-y, 0px));
 }
-
-Now you can customize per component:
-```css
-.modal {
-  --transition-enter-y: -20px;
-  --transition-duration: 400ms;
-}
-
-@media (max-width: 640px) {
-  .modal {
-    --transition-enter-y: 100%;
-    --transition-enter-x: 0;
-  }
-}
